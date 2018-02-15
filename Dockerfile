@@ -9,7 +9,7 @@ ENV URL https://github.com/bosun-monitor/bosun/releases/download
 ENV PACKAGE scollector-linux-amd64
 
 RUN set -x \
-    && && mkdir -p ${WORKPLACE} \
+    && mkdir -p ${WORKPLACE} \
     && apk update \
     && apk add --no-cache tzdata procps mlocate wget \
     && cd ${TMPDIR} \
