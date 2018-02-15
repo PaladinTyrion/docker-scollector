@@ -11,7 +11,7 @@ ENV PACKAGE scollector-linux-amd64
 RUN set -x \
     && && mkdir -p ${WORKPLACE} \
     && apk update \
-    && apk add --no-cache tzdata procps wget \
+    && apk add --no-cache tzdata procps mlocate wget \
     && cd ${TMPDIR} \
     && wget --progress=bar:force -O "${URL}/${VERSION}/${PACKAGE}" \
     && mv ${PACKAGE} ${SCOLLECTOR_HOME}/scollector \
