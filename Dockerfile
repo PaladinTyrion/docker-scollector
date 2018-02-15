@@ -13,10 +13,11 @@ RUN set -x \
     && apk update \
     && apk add --no-cache tzdata procps wget \
     && cd ${TMPDIR} \
-    && wget --progress=bar:force -O "${URL}/${VERSION}/${PACKAGE}" \
+    && wget --progress=bar:force -O ${PACKAGE} "${URL}/${VERSION}/${PACKAGE}" \
     && mv ${PACKAGE} ${SCOLLECTOR_HOME}/scollector \
-    && apk del wget \
+    && chmod +x ${SCOLLECTOR_HOME}/scollector \
     && ${SCOLLECTOR_HOME}/scollector -version \
+    && apk del wget \
     && set +x
 
 WORKDIR /app
